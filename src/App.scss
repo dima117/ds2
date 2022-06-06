@@ -1,0 +1,69 @@
+$color-base: #4698eb;
+
+$color-base-content: #000;
+$color-base-background: #fff;
+
+@if lightness($color-base) < 60% {
+    $color-base-content: #fff;
+    $color-base-background: #000;
+}
+
+$color-base-accent: #008bd6;
+
+$color-page-background: mix($color-base-content, $color-base, 7%);
+$color-page-content: $color-base-content;
+
+$color-surface-background: $color-base;
+$color-surface-content: $color-base-content;
+
+$color-container-background: transparentize($color-base-content, 0.94);
+$color-container-content: $color-base-content;
+
+$color-control-background: transparentize($color-base-content, 0.85);
+$color-control-content: $color-base-content;
+
+$color-text-primary: $color-base-content;
+$color-text-secondary: transparentize($color-base-content, 0.2);
+
+$size-control: 36px;
+$radius-control: 4px;
+$space-xs: 2px;
+$space-s: 4px;
+$space-m: 8px;
+
+body {
+    background-color: $color-page-background;
+    color: $color-page-content;
+}
+
+.Content {
+    background-color: $color-surface-background;
+    color: $color-surface-content;
+    padding: 0 24px;
+}
+
+.Container {
+    background-color: $color-container-background;
+    color: $color-container-content;
+    padding: 0 24px;
+}
+
+.Control {
+    background-color: $color-control-background;
+    color: $color-control-content;
+    display: inline-block;
+}
+
+.Header {
+    font-size: 2em;
+    // font-weight: bold;
+    color: $color-text-primary;
+}
+
+.Subtitle {
+    color: $color-text-secondary;
+}
+
+.Area {
+    padding: 16px;
+}

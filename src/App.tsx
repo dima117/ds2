@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button, RadioButton } from './controls';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.scss';
+
+export const App: React.FC = () => {
+    return (
+        <div>
+            <div className='Area'>
+                navigation
+            </div>
+            <div className='Content'>
+                <div className='Area'>
+                    <div className='Header'>Page header</div>
+                    <div className='Subtitle'>This is the subtitle</div>
+                    content <Button /> <RadioButton />
+                </div>
+                <div className='Container'>
+                    <div className='Area'>
+                        container 1 <Button />
+                    </div>
+                    <div className='Container'>
+                        <div className='Area'>
+                            container 2 <Button />
+                        </div>
+                        <div className='Container'>
+                            <div className='Area'>
+                                container 3 <Button />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
-
-export default App;

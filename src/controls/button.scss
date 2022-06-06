@@ -1,0 +1,10 @@
+@import '../App.scss';
+.Button {
+    display: inline-flex;
+    align-items: center;
+    height: $size-control;
+    border-radius: $radius-control;
+    background-color: $color-control-background;
+    color: $color-text-primary;
+    padding: 0 12px;
+}
