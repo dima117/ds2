@@ -1,6 +1,6 @@
 // BASE
-$color-base: #ffffff;
-// $color-base: #4698eb;
+// $color-base: #ffffff;
+$color-base: #4698eb;
 
 $color-base-content: #000;
 $color-base-background: #fff;
@@ -12,11 +12,12 @@ $color-base-background: #fff;
 
 // ACCENT
 $color-accent: #ffd500;
+// $color-accent: #8ce458;
 
 $color-accent-content: #000;
 $color-accent-background: #fff;
 
-@if lightness($color-accent) < 60% {
+@if lightness($color-accent) < 50% {
     $color-accent-content: #fff;
     $color-accent-background: #000;
 }

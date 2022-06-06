@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, RadioButton, Header, Tumbler } from './controls';
+import { Button, RadioButton, RadioBox, Header, Tumbler } from './controls';
 
 import './App.scss';
 
@@ -13,6 +13,9 @@ export const App: React.FC = () => {
                 <div className='Area'>
                     <Header/>
                     content <Button /> <RadioButton /> <Tumbler /> <Tumbler checked />
+                    <div className='Area'>
+                        <RadioBox />
+                    </div>
                 </div>
                 <div className='Container'>
                     <div className='Area'>

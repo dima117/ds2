@@ -3,6 +3,7 @@ import './button.scss';
 import './header.scss';
 import './tumbler.scss';
 import './radioButton.scss';
+import './radioBox.scss';
 
 export const RadioButton: FC = () => {
     return (
@@ -18,6 +19,24 @@ export const RadioButton: FC = () => {
             </div>
             <div className='RadioButton-Item'>
                 Little cow
+            </div>
+        </div>
+    );
+}
+export const RadioBox: FC = () => {
+    return (
+        <div className='RadioBox'>
+            <div className='RadioBox-Item'>
+                <div className='RadioBox-Marker' /> Cat
+            </div>
+            <div className='RadioBox-Item RadioBox-Item_current'>
+                <div className='RadioBox-Marker' /> Dog
+            </div>
+            <div className='RadioBox-Item'>
+                <div className='RadioBox-Marker' /> Pig
+            </div>
+            <div className='RadioBox-Item'>
+                <div className='RadioBox-Marker' /> Little cow
             </div>
         </div>
     );

@@ -1,0 +1,32 @@
+@import '../App.scss';
+.RadioBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.RadioBox-Marker {
+    display: inline-flex;
+    width: $size-control * 0.55;
+    height: $size-control * 0.55;
+    background-color: $color-control-background;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.RadioBox-Item {
+    margin-bottom: $space-s;
+}
+
+.RadioBox-Item_current .RadioBox-Marker {
+    background-color: $color-accent;
+    &::before {
+        display: block;
+        content: '';
+        background-color: $color-accent-content;
+        width: 40%;
+        height: 40%;
+        border-radius: 50%;
+    }
+}
