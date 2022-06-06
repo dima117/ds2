@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, RadioButton } from './controls';
+import { Button, RadioButton, Header, Tumbler } from './controls';
 
 import './App.scss';
 
@@ -11,9 +11,8 @@ export const App: React.FC = () => {
             </div>
             <div className='Content'>
                 <div className='Area'>
-                    <div className='Header'>Page header</div>
-                    <div className='Subtitle'>This is the subtitle</div>
-                    content <Button /> <RadioButton />
+                    <Header/>
+                    content <Button /> <RadioButton /> <Tumbler /> <Tumbler checked />
                 </div>
                 <div className='Container'>
                     <div className='Area'>

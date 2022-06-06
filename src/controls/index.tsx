@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import './button.scss';
+import './header.scss';
+import './tumbler.scss';
 import './radioButton.scss';
 
 export const RadioButton: FC = () => {
@@ -33,7 +35,7 @@ export const Header: FC = () => {
     return (
         <div className='Header'>
             <div className='Header-Title'>
-                Click me
+                Page header
             </div>
             <div className='Header-Subitle'>
                 Click me
@@ -41,3 +43,16 @@ export const Header: FC = () => {
         </div>
     );
 }
+
+export const Tumbler: FC<{ checked?: boolean }> = ({ checked }) => {
+    let cn = 'Tumbler';
+    if (checked) {
+        cn += ' Tumbler_checked'
+    }
+
+    return (
+        <div className={cn}>
+            <div className='Tumbler-Circle' />
+        </div>
+    );
+};

@@ -1,10 +1,14 @@
 @import '../App.scss';
+
 .Header {
-    display: inline-flex;
-    align-items: center;
-    height: $size-control;
-    border-radius: $radius-control;
-    background-color: $color-control-background;
+    margin-bottom: $space-l;
+}
+
+.Header-Title {
+    font-size: 2em;
     color: $color-text-primary;
-    padding: 0 12px;
+}
+
+.Header-Subitle {
+    color: $color-text-secondary;
 }
