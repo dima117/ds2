@@ -5,7 +5,6 @@
     height: $size-control;
     border-radius: $radius-control;
     background-color: $color-control-background;
-    color: $color-control-content;
 }
 
 .RadioButton-Item {
@@ -14,7 +13,7 @@
     display: flex;
     align-items: center;
     height: $size-control - $space-m;
-    color: $color-text-secondary;
+    color: $color-text-secondary; // CHECK
 }
 
 .RadioButton-Item_current {

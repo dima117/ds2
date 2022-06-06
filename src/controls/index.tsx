@@ -4,6 +4,7 @@ import './header.scss';
 import './tumbler.scss';
 import './radioButton.scss';
 import './radioBox.scss';
+import './input.scss';
 
 export const RadioButton: FC = () => {
     return (
@@ -64,10 +65,7 @@ export const Header: FC = () => {
 }
 
 export const Tumbler: FC<{ checked?: boolean }> = ({ checked }) => {
-    let cn = 'Tumbler';
-    if (checked) {
-        cn += ' Tumbler_checked'
-    }
+    let cn = 'Tumbler' + (checked ? ' Tumbler_checked' : '');
 
     return (
         <div className={cn}>
@@ -75,3 +73,13 @@ export const Tumbler: FC<{ checked?: boolean }> = ({ checked }) => {
         </div>
     );
 };
+
+export const Input: FC<{ state?: 'empty'|'focused' }> = ({ state }) => {
+    const cn = 'Input' + (state ? ` Input_${state}` : '');
+
+    return (
+        <div className={cn}>
+            This is the input text
+        </div>
+    );
+}
