@@ -1,10 +1,9 @@
 @import '../App.scss';
-
 .Tumbler {
     display: inline-flex;
     height: $size-control;
     border-radius: calc($size-control / 2);
-    background-color: $color-control-background;
+    background-color: var(--color-control-background);
     width: $size-control * 1.7;
     vertical-align: top;
 }
@@ -12,12 +11,12 @@
 .Tumbler-Circle {
     width: $size-control - $space-m;
     height: $size-control - $space-m;
-    background-color: $color-base;
+    background-color: var(--color-base);
     border-radius: 50%;
     margin: calc($space-m / 2);
 }
 
 .Tumbler_checked {
     justify-content: end;
-    background-color: $color-accent;
+    background-color: var(--color-accent);
 }

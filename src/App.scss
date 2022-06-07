@@ -1,72 +1,31 @@
-// BASE
-$color-base: #fff;
-// $color-base: #000;
-// $color-base: #4698eb;
-
-$color-base-content: #000;
-
-@if lightness($color-base) < 60% {
-    $color-base-content: #fff;
-}
-
-// ACCENT
-// $color-accent: #ffd500;
-$color-accent: #ffcc00;
-
-$color-accent-content: #000;
-
-@if lightness($color-accent) < 50% {
-    $color-accent-content: #fff;
-}
-
-// TEXT
-$color-text-primary: $color-base-content;
-$color-text-secondary: transparentize($color-base-content, 0.5);
-$color-outline: transparentize($color-base-content, 0.80);
-
-// SURFACES
-$color-page-background: mix($color-base-content, $color-base, 7%);
-$color-page-content: $color-base-content;
-
-$color-surface-background: $color-base;
-$color-surface-content: $color-base-content;
-
-$color-container-background: transparentize($color-base-content, 0.94);
-$color-container-content: $color-base-content;
-
-// CONTROLS
-$color-control-background: transparentize($color-base-content, 0.85);
-$color-control-content: $color-base-content;
-
-
 $size-control: 36px;
-$radius-control: 4px;
+$radius-control: 6px;
+$radius-container: 12px;
 $space-xs: 2px;
 $space-s: 4px;
 $space-m: 8px;
 $space-l: 16px;
-
+$space-xl: 20px;
 body {
-    background-color: $color-page-background;
-    color: $color-page-content;
+    background-color: var(--color-page-background);
+    color: var(--color-page-content);
 }
 
 .Content {
-    background-color: $color-surface-background;
-    color: $color-surface-content;
+    background-color: var(--color-surface-background);
+    color: var(--color-surface-content);
     padding: 0 24px;
 }
 
 .Container {
-    background-color: $color-container-background;
-    color: $color-container-content;
+    background-color: var(--color-container-background);
+    color: var(--color-container-content);
     padding: 0 24px;
 }
 
 .Control {
-    background-color: $color-control-background;
-    color: $color-control-content;
-    display: inline-block;
+    background-color: var(--color-control-background);
+    color: var(--color-control-content);
 }
 
 .Area {

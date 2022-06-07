@@ -1,10 +1,13 @@
-import { FC } from 'react';
+import { FC, ReactNode, useState } from 'react';
+import { cn } from '@bem-react/classname';
+
 import './button.scss';
 import './header.scss';
 import './tumbler.scss';
 import './radioButton.scss';
 import './radioBox.scss';
 import './input.scss';
+import './messageBox.scss';
 
 export const RadioButton: FC = () => {
     return (
@@ -44,8 +47,10 @@ export const RadioBox: FC = () => {
 }
 
 export const Button: FC = () => {
+    const className = cn('Button')();
+
     return (
-        <div className='Button'>
+        <div className={className} tabIndex={0}>
             Click me
         </div>
     );
@@ -74,12 +79,20 @@ export const Tumbler: FC<{ checked?: boolean }> = ({ checked }) => {
     );
 };
 
-export const Input: FC<{ state?: 'empty'|'focused' }> = ({ state }) => {
-    const cn = 'Input' + (state ? ` Input_${state}` : '');
+export const Input: FC = () => {
+    const [value, setValue] = useState('This is the input text');
 
     return (
-        <div className={cn}>
-            This is the input text
-        </div>
+        <input type="text"
+            placeholder="Enter your name"
+            className="Input"
+            onChange={e => setValue(e.target.value)}
+            value={value} />
+    );
+}
+
+export const MessageBox: FC<{ children: ReactNode, theme: 'dark'|'blue' }> = ({ children, theme }) => {
+    return (
+        <div className={`MessageBox Theme_${theme}`}>{children}</div>
     );
 }

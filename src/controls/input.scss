@@ -4,18 +4,20 @@
     align-items: center;
     height: $size-control;
     border-radius: $radius-control;
-    background-color: $color-base;
-    color: $color-text-primary;
+    background-color: var(--color-base);
+    color: var(--color-text-primary);
     padding: 0 12px;
-    outline: 2px solid $color-outline;
+    border: 2px solid var(--color-outline);
     width: 240px;
     margin-bottom: $space-l;
+    outline: none;
+    font-size: 1em;
 }
 
-.Input_empty {
-    color: $color-text-secondary;
+.Input::placeholder {
+    color: var(--color-text-secondary);
 }
 
-.Input_focused {
-    outline-color: $color-accent;
+.Input:focus {
+    border-color: var(--color-base-content);
 }

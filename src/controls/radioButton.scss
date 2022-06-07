@@ -4,7 +4,7 @@
     align-items: center;
     height: $size-control;
     border-radius: $radius-control;
-    background-color: $color-control-background;
+    background-color: var(--color-control-background);
 }
 
 .RadioButton-Item {
@@ -13,11 +13,11 @@
     display: flex;
     align-items: center;
     height: $size-control - $space-m;
-    color: $color-text-secondary; // CHECK
+    color: var(--color-text-secondary); // CHECK
 }
 
 .RadioButton-Item_current {
-    background-color: $color-base;
+    background-color: var(--color-base);
     border-radius: $radius-control;
-    color: $color-text-primary;
+    color: var(--color-text-primary);
 }

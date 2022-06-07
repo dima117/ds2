@@ -4,7 +4,24 @@
     align-items: center;
     height: $size-control;
     border-radius: $radius-control;
-    background-color: $color-control-background;
-    color: $color-text-primary;
+    background-color: var(--color-control-background);
+    color: var(--color-text-primary);
     padding: 0 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    box-sizing: border-box;
+    outline: none;
+    border: 2px solid transparent;
+}
+
+.Button:hover {
+    background-color: var(--color-control-background-hovered);
+}
+
+.Button:active {
+    background-color: var(--color-control-background-pressed);
+}
+
+.Button:focus-visible {
+    border-color: var(--color-base-content);
 }

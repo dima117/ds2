@@ -1,0 +1,18 @@
+@import '../App.scss';
+.MessageBox {
+    padding: $space-xl;
+    background-color: var(--color-surface-background);
+    color: var(--color-surface-content);
+    border-radius: $radius-container;
+    max-width: 600px;
+    margin-bottom: $space-xl;
+    .Header-Title {
+        font-size: 1.3em;
+    }
+    .Header-Subitle {
+        font-size: 0.8em;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}

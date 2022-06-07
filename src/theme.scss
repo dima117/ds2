@@ -1,0 +1,47 @@
+@mixin theme($color-base, $color-accent) {
+    $color-base-content: #000;
+    @if lightness($color-base) < 60% {
+        $color-base-content: #fff;
+    }
+    // ACCENT
+    $color-accent: #ffd500;
+    // $color-accent: #ffdb4d;
+    $color-accent-content: #000;
+    @if lightness($color-accent) < 50% {
+        $color-accent-content: #fff;
+    }
+
+    --color-base-content: #{$color-base-content};
+    --color-base: #{$color-base};
+    --color-accent: #{$color-accent};
+    --color-accent-content: #{$color-accent-content};
+
+    // TEXT
+    --color-text-primary: #{$color-base-content};
+    --color-text-secondary: #{transparentize($color-base-content, 0.5)};
+    --color-outline: #{transparentize($color-base-content, 0.5)};
+    // SURFACES
+    --color-page-background: #{mix($color-base-content, $color-base, 7%)};
+    --color-page-content: #{$color-base-content};
+    --color-surface-background: #{$color-base};
+    --color-surface-content: #{$color-base-content};
+    --color-container-background: #{transparentize($color-base-content, 0.94)};
+    --color-container-content: #{$color-base-content};
+    // CONTROLS
+    --color-control-background: #{transparentize($color-base-content, 0.88)};
+    --color-control-background-hovered: #{transparentize($color-base-content, 0.84)};
+    --color-control-background-pressed: #{transparentize($color-base-content, 0.8)};
+    --color-control-content: #{$color-base-content};
+}
+
+.Theme_blue {
+    @include theme(#4698eb, #ffdb4d);
+}
+
+.Theme_light {
+    @include theme(white, #ffdb4d);
+}
+
+.Theme_dark {
+    @include theme(black, #ffdb4d);
+}
