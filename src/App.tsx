@@ -20,7 +20,7 @@ export const App: React.FC = () => {
                         <RadioBox />
                     </div>
                 </div>
-                <MessageBox theme='blue'>
+                <MessageBox preset='info'>
                     <Header />
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -30,6 +30,9 @@ export const App: React.FC = () => {
                     <p>
                         <Button /> <Button />
                     </p>
+                    <div className='Area'>
+                        <RadioBox />
+                    </div>
                 </MessageBox>
                 <div className='Container'>
                     <div className='Area'>

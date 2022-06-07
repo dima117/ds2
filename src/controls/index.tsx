@@ -91,8 +91,8 @@ export const Input: FC = () => {
     );
 }
 
-export const MessageBox: FC<{ children: ReactNode, theme: 'dark'|'blue' }> = ({ children, theme }) => {
+export const MessageBox: FC<{ children: ReactNode, preset: 'info'|'danger' }> = ({ children, preset }) => {
     return (
-        <div className={`MessageBox Theme_${theme}`}>{children}</div>
+        <div className={`MessageBox Theme-Area_${preset}`}>{children}</div>
     );
 }

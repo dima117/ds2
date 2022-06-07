@@ -34,14 +34,18 @@
     --color-control-content: #{$color-base-content};
 }
 
-.Theme_blue {
-    @include theme(#4698eb, #ffdb4d);
-}
-
 .Theme_light {
     @include theme(white, #ffdb4d);
+
+    .Theme-Area_info {
+        @include theme(#4698eb, #ffdb4d);
+    }
 }
 
 .Theme_dark {
     @include theme(black, #ffdb4d);
+
+    .Theme-Area_info {
+        @include theme(#0f4c89, #ffdb4d);
+    }
 }

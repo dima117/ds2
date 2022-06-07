@@ -9,3 +9,9 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+#toggle {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
