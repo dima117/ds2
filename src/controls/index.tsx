@@ -93,6 +93,6 @@ export const Input: FC = () => {
 
 export const MessageBox: FC<{ children: ReactNode, preset: 'info'|'danger' }> = ({ children, preset }) => {
     return (
-        <div className={`MessageBox Theme-Area_${preset}`}>{children}</div>
+        <div className={`MessageBox MessageBox_${preset} Theme-Area_${preset}`}>{children}</div>
     );
 }

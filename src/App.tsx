@@ -34,6 +34,15 @@ export const App: React.FC = () => {
                         <RadioBox />
                     </div>
                 </MessageBox>
+                <MessageBox preset='danger'>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua.
+                    </p>
+                    <p>
+                        <Button /> <Button />
+                    </p>
+                </MessageBox>
                 <div className='Container'>
                     <div className='Area'>
                         container 1 <Button />

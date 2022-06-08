@@ -1,37 +1,68 @@
-@mixin theme($color-base, $color-accent) {
-    $color-base-content: #000;
-    @if lightness($color-base) < 60% {
-        $color-base-content: #fff;
-    }
-    // ACCENT
-    $color-accent: #ffd500;
-    // $color-accent: #ffdb4d;
-    $color-accent-content: #000;
-    @if lightness($color-accent) < 50% {
-        $color-accent-content: #fff;
+$elevation-diff: 0.06;
+$state-diff: 0.06;
+
+$container-alpha: $elevation-diff;
+$control-alpha: 2 * $elevation-diff;
+
+@function content-color($bg-color) {
+    $result: #000;
+
+    @if lightness($bg-color) <= 65% {
+        $result: #fff;
     }
 
-    --color-base-content: #{$color-base-content};
-    --color-base: #{$color-base};
-    --color-accent: #{$color-accent};
-    --color-accent-content: #{$color-accent-content};
+    @return $result;
+}
+
+@mixin theme($color-base, $color-accent) {
+    $color-base-content: content-color($color-base);
+    $color-accent-content: content-color($color-accent);
 
     // TEXT
-    --color-text-primary: #{$color-base-content};
-    --color-text-secondary: #{transparentize($color-base-content, 0.5)};
-    --color-outline: #{transparentize($color-base-content, 0.5)};
+    $color-text-primary: $color-base-content;
+    $color-text-secondary: change-color($color-base-content, $alpha: 0.5);
+    $color-outline: $color-text-secondary;
+
     // SURFACES
-    --color-page-background: #{mix($color-base-content, $color-base, 7%)};
-    --color-page-content: #{$color-base-content};
-    --color-surface-background: #{$color-base};
-    --color-surface-content: #{$color-base-content};
-    --color-container-background: #{transparentize($color-base-content, 0.94)};
-    --color-container-content: #{$color-base-content};
+    $color-page-background: mix($color-base-content, $color-base, 7%);
+    $color-page-content: $color-base-content;
+
+    $color-surface-background: $color-base;
+    $color-surface-content: $color-base-content;
+
+    $color-container-background: change-color($color-base-content, $alpha: $container-alpha);
+    $color-container-content: $color-base-content;
+
     // CONTROLS
-    --color-control-background: #{transparentize($color-base-content, 0.88)};
-    --color-control-background-hovered: #{transparentize($color-base-content, 0.84)};
-    --color-control-background-pressed: #{transparentize($color-base-content, 0.8)};
-    --color-control-content: #{$color-base-content};
+    $color-control-background: change-color($color-base-content, $alpha: $control-alpha);
+    $color-control-background-hovered: change-color($color-base-content, $alpha: $control-alpha + $state-diff);
+    $color-control-background-pressed: change-color($color-base-content, $alpha: $control-alpha + ($state-diff * 2));
+    $color-control-content: $color-base-content;
+
+    // VARIABLES
+    --color-base: #{$color-base};
+    --color-accent: #{$color-accent};
+    --color-base-content: #{$color-base-content};
+    --color-accent-content: #{$color-accent-content};
+
+    --color-text-primary: #{$color-text-primary};
+    --color-text-secondary: #{$color-text-secondary};
+    --color-outline: #{$color-outline};
+
+    --color-page-background: #{$color-page-background};
+    --color-page-content: #{$color-page-content};
+
+    --color-surface-background: #{$color-surface-background};
+    --color-surface-content: #{$color-surface-content};
+
+    --color-container-background: #{$color-container-background};
+    --color-container-content: #{$color-container-content};
+
+    // CONTROLS
+    --color-control-background: #{$color-control-background};
+    --color-control-background-hovered: #{$color-control-background-hovered};
+    --color-control-background-pressed: #{$color-control-background-pressed};
+    --color-control-content: #{$color-control-content};
 }
 
 .Theme_light {
@@ -40,6 +71,9 @@
     .Theme-Area_info {
         @include theme(#4698eb, #ffdb4d);
     }
+    .Theme-Area_danger {
+        @include theme(#f54949, #ffdb4d);
+    }
 }
 
 .Theme_dark {
@@ -47,5 +81,9 @@
 
     .Theme-Area_info {
         @include theme(#0f4c89, #ffdb4d);
+    }
+
+    .Theme-Area_danger {
+        @include theme(#f54949, #ffdb4d);
     }
 }

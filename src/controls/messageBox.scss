@@ -12,7 +12,17 @@
     .Header-Subitle {
         font-size: 0.8em;
     }
-    p {
+    p:first-of-type {
+        margin-top: 0;
+    }
+    p:last-of-type {
         margin-bottom: 0;
     }
+}
+
+.MessageBox_danger {
+    max-width: 420px;
+    position: fixed;
+    top: $space-m;
+    right: $space-l;
 }
